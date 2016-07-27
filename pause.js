@@ -4,7 +4,4 @@ function clickPause() {
     child.click();
 }
  
-
-chrome.extension.sendMessage({state: "pause"}, function(response) {
-	clickPause();
-});
+clickPause();

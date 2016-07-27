@@ -15,7 +15,8 @@
 
   "browser_action": {
     "default_icon": "icons/icon38.png",
-    "default_title": "Finn Audio"
+    "default_title": "Finn Audio",
+    "default_popup": "popup.html"
   },
 
   "commands": {
