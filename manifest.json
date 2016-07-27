@@ -1,0 +1,41 @@
+{
+  "name": "Finn Audio",
+  "description": "Play/Pause audio in the Chrome Browser",
+  "version": "2.0",
+
+  "permissions": [
+    "activeTab",
+    "http://pandora.com/*",
+    "https://pandora.com/*"
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "browser_action": {
+    "default_icon": "icons/icon38.png",
+    "default_title": "Finn Audio"
+  },
+
+  "commands": {
+    "Pause": {
+        "suggested_key": {
+        "default": "Ctrl+J",
+        "mac": "Command+J"
+      },
+    "description": "Pause"
+    },
+    
+    "Play": {
+        "suggested_key": {
+        "default": "Ctrl+K",
+        "mac": "Command+K"
+      },
+    "description": "Play"
+    }
+  },
+
+
+  "manifest_version": 2
+}
