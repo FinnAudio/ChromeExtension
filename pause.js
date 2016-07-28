@@ -13,6 +13,12 @@ chrome.runtime.sendMessage({action: "pause"}, function(response)
     else if (url.includes("spotify")) {
         spotifyPause();
     }
+    else if (url.includes("soundcloud")) {
+        soundcloudPause();
+    }
+    else if (url.includes("amazon")) {
+        amazonVideoPause();
+    }
 });
 
 function pandoraPause() {
@@ -38,4 +44,14 @@ function spotifyPause() {
     var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
     var playButton = iframeDocument.getElementById('play-pause');
     playButton.click();
+}
+
+function soundcloudPause() {
+    var parents = document.getElementsByClassName("playControl");
+    parents[0].click();
+}
+
+function amazonVideoPause() {
+    var parents = document.getElementsByClassName("pausedIcon");
+    parents[0].click();
 }

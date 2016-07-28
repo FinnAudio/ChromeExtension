@@ -22,4 +22,16 @@ document.addEventListener('DOMContentLoaded', function() {
 		var newURL = "http://play.spotify.com/";
 		chrome.tabs.create({url: newURL});
 	});
+
+	var netflixButton = document.getElementById('soundcloud');
+	netflixButton.addEventListener('click', function() {
+		var newURL = "http://soundcloud.com/";
+		chrome.tabs.create({url: newURL});
+	});
+
+	var netflixButton = document.getElementById('amazonVideo');
+	netflixButton.addEventListener('click', function() {
+		var newURL = "http://amazon.com/";
+		chrome.tabs.create({url: newURL});
+	});
 });
