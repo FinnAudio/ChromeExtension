@@ -5,6 +5,7 @@
 
   "permissions": [
     "activeTab",
+    "tabs",
     "http://pandora.com/*",
     "https://pandora.com/*",
     "background",

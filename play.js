@@ -1,30 +1,31 @@
 chrome.runtime.sendMessage({action: "play"}, function(response)
 {
-    var url = response.url;
-    if (url.includes("youtube")) {
-		youtubePlay();
-	}
-	else if (url.includes("pandora")) {
-		pandoraPlay();
-	}
-	else if (url.includes("netflix")) {
-		netflixPlay();
-	}
-    else if (url.includes("spotify")) {
-        spotifyPlay();
+    var tabList = response.tabList;
+    for (var i = 0; tabList.length; i++) {
+        var url = tabList[i].url;
+        if (url.includes("youtube")) {
+            youtubePlay();
+        }
+        else if (url.includes("pandora")) {
+            pandoraPlay();
+        }
+        else if (url.includes("netflix")) {
+            netflixPlay();
+        }
+        else if (url.includes("spotify")) {
+            spotifyPlay();
+        }
+        else if (url.includes("soundcloud")) {
+            soundcloudPlay();
+        }
+        else if (url.includes("amazon")) {
+            amazonVideoPlay();
+        }
     }
-    else if (url.includes("soundcloud")) {
-        soundcloudPlay();
-    }
-    else if (url.includes("amazon")) {
-        amazonVideoPlay();
-    }
+    
 });
-// var url = background.tabURL;
-// alert(url);
 
-
-function youtubePlay(className) {
+function youtubePlay() {
     var parents = document.getElementsByClassName("ytp-play-button");
     parents[0].click();
 }

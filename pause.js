@@ -1,24 +1,27 @@
 chrome.runtime.sendMessage({action: "pause"}, function(response)
 {
-   	var url = response.url;
-   	if (url.includes("youtube")) {
-		youtubePause();
-	}
-	else if (url.includes("pandora")) {
-		pandoraPause();
-	}
-	else if (url.includes("netflix")) {
-		netflixPause();
-	}
-    else if (url.includes("spotify")) {
-        spotifyPause();
-    }
-    else if (url.includes("soundcloud")) {
-        soundcloudPause();
-    }
-    else if (url.includes("amazon")) {
-        amazonVideoPause();
-    }
+   	 var tabList = response.tabList;
+    for (var i = 0; tabList.length; i++) {
+        var url = tabList[i].url;
+        if (url.includes("youtube")) {
+            youtubePause();
+        }
+        else if (url.includes("pandora")) {
+            pandoraPause();
+        }
+        else if (url.includes("netflix")) {
+            netflixPause();
+        }
+        else if (url.includes("spotify")) {
+            spotifyPause();
+        }
+        else if (url.includes("soundcloud")) {
+            soundcloudPause();
+        }
+        else if (url.includes("amazon")) {
+            amazonVideoPause();
+        }
+   	}
 });
 
 function pandoraPause() {
