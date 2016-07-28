@@ -3,5 +3,17 @@ document.addEventListener('DOMContentLoaded', function() {
 	pandoraButton.addEventListener('click', function() {
 		var newURL = "http://pandora.com/";
 		chrome.tabs.create({url: newURL});
-	})
+	});
+
+	var youtubeButton = document.getElementById('youtube');
+	youtubeButton.addEventListener('click', function() {
+		var newURL = "http://youtube.com/";
+		chrome.tabs.create({url: newURL});
+	});
+
+	var netflixButton = document.getElementById('netflix');
+	netflixButton.addEventListener('click', function() {
+		var newURL = "http://netflix.com/";
+		chrome.tabs.create({url: newURL});
+	});
 });

@@ -15,7 +15,7 @@ chrome.commands.onCommand.addListener(function(command) {
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
   	chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
-  		if (request.action == "pause") {
+  		if (request.action == "pause" || request.action == "play") {
   			sendResponse({url: tabs[0].url});
   		}
   	});
