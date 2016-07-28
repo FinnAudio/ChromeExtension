@@ -2,17 +2,41 @@
     outline:none;
 }
 
-a:link {
-	text-decoration: none;
-}
-
 body {
 	width: 200px;
-	height: 100px;
+	height: 180px;
+	background-color: #4d4d4d;
+}
+
+a:link {
+	text-decoration: none;
+	text-align: center;
+}
+
+#finnAudio {
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+#finnLogo {
+	width: 180px;
+}
+
+#logoButtons {
+	text-align: center;
 }
 
 .logo {
-	width: 48px;
-	height: 48px;
-	margin-right: 10px;
+	width: 60px;
+	height: 60px;
+	border-radius: 10px;
 }
+
+#pandora {
+	padding-right: 5px;
+}
+
+#youtube {
+	padding-right: 5px;
+}
+
