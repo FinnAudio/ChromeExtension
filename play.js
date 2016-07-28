@@ -1,21 +1,15 @@
-
-
-
 chrome.runtime.sendMessage({action: "play"}, function(response)
 {
     var url = response.url;
     if (url.includes("youtube")) {
 		youtubePlay();
 	}
-
 	else if (url.includes("pandora")) {
 		pandoraPlay();
 	}
-
 	else if (url.includes("netflix")) {
 		netflixPlay();
 	}
-
     else if (url.includes("spotify")) {
         spotifyPlay();
     }
@@ -41,7 +35,8 @@ function netflixPlay() {
 }
 
 function spotifyPlay() {
-    var playButton = document.getElementById("play-pause");
-    alert(playButton);
+    var iframe = document.getElementById('app-player');
+    var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+    var playButton = iframeDocument.getElementById('play-pause');
     playButton.click();
 }

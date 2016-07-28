@@ -8,8 +8,11 @@ chrome.runtime.sendMessage({action: "pause"}, function(response)
 		pandoraPause();
 	}
 	else if (url.includes("netflix")) {
-		netflixPlay();
+		netflixPause();
 	}
+    else if (url.includes("spotify")) {
+        spotifyPause();
+    }
 });
 
 function pandoraPause() {
@@ -24,8 +27,15 @@ function youtubePause() {
     parents[0].click();
 }
 
-function netflixPlay() {
+function netflixPause() {
 	var parents = document.getElementsByClassName("player-play-pause");
     //var child = parents[0].getElementsByTagName('a')[0];
     parents[0].click();
+}
+
+function spotifyPause() {
+    var iframe = document.getElementById('app-player');
+    var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+    var playButton = iframeDocument.getElementById('play-pause');
+    playButton.click();
 }

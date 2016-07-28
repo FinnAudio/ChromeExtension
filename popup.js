@@ -16,4 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
 		var newURL = "http://netflix.com/";
 		chrome.tabs.create({url: newURL});
 	});
+
+	var netflixButton = document.getElementById('spotify');
+	netflixButton.addEventListener('click', function() {
+		var newURL = "http://play.spotify.com/";
+		chrome.tabs.create({url: newURL});
+	});
 });
