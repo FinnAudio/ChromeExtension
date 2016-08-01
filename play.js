@@ -18,7 +18,7 @@ chrome.runtime.sendMessage({action: "play"}, function(response)
         else if (url.includes("soundcloud")) {
             soundcloudPlay();
         }
-        else if (url.includes("amazon")) {
+        else if (url.includes("amazon.com/gp")) {
             amazonVideoPlay();
         }
     }

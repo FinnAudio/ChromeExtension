@@ -28,18 +28,20 @@
   "commands": {
     "Pause": {
         "suggested_key": {
-        "default": "Ctrl+J",
-        "mac": "Command+J"
+        "default": "Ctrl+B",
+        "mac": "Command+B"
       },
-    "description": "Pause"
+    "description": "Pause",
+    "global": true
     },
     
     "Play": {
         "suggested_key": {
-        "default": "Ctrl+K",
-        "mac": "Command+K"
+        "default": "Ctrl+Y",
+        "mac": "Command+Y"
       },
-    "description": "Play"
+      "description": "Play",
+      "global": true
     }
   },
 

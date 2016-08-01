@@ -18,7 +18,7 @@ chrome.runtime.sendMessage({action: "pause"}, function(response)
         else if (url.includes("soundcloud")) {
             soundcloudPause();
         }
-        else if (url.includes("amazon")) {
+        else if (url.includes("amazon.com/gp")) {
             amazonVideoPause();
         }
    	}

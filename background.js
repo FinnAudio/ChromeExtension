@@ -1,12 +1,10 @@
-// var tabURL = "";
-
 chrome.commands.onCommand.addListener(function(command) {
 	chrome.tabs.query({}, function (tabs) {
     for (var i = 0; tabs.length; i++) {
       var url = tabs[i].url;
       var tabId;
       if (url.includes("pandora") || url.includes("youtube") || url.includes("netflix") || 
-          url.includes("amazon") ||  url.includes("soundcloud") ||  url.includes("spotify")) {
+          url.includes("amazon.com/gp") ||  url.includes("soundcloud") ||  url.includes("spotify")) {
 
           tabId = tabs[i].id;
 
