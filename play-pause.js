@@ -7,7 +7,14 @@ chrome.runtime.sendMessage({action: "play"}, function(response)
             youtubePlay();
         }
         else if (url.includes("pandora")) {
-            pandoraPlay();
+            var parents = document.getElementsByClassName("playButton");
+            var s = parents[0].style.display;
+            if(s == ("none")) {
+                pandoraPause();
+            }
+            else {
+                pandoraPlay();
+            }
         }
         else if (url.includes("netflix")) {
             netflixPlay();
@@ -32,6 +39,12 @@ function youtubePlay() {
 
 function pandoraPlay() {
     var parents = document.getElementsByClassName("playButton");
+    var child = parents[0].getElementsByTagName('a')[0];
+    child.click();
+}
+
+function pandoraPause() {
+    var parents = document.getElementsByClassName("pauseButton");
     var child = parents[0].getElementsByTagName('a')[0];
     child.click();
 }

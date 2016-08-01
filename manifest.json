@@ -26,22 +26,13 @@
   },
 
   "commands": {
-    "Pause": {
+    "Play/Pause": {
         "suggested_key": {
-        "default": "Ctrl+B",
-        "mac": "Command+B"
+        "default": "MediaPlayPause",
+        "mac": "MediaPlayPause"
       },
-    "description": "Pause",
+    "description": "Play/Pause Audio",
     "global": true
-    },
-    
-    "Play": {
-        "suggested_key": {
-        "default": "Ctrl+Y",
-        "mac": "Command+Y"
-      },
-      "description": "Play",
-      "global": true
     }
   },
 
