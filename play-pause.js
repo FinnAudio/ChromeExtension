@@ -25,8 +25,23 @@ chrome.runtime.sendMessage({action: "play"}, function(response)
         else if (url.includes("soundcloud")) {
             soundcloudPlay();
         }
-        else if (url.includes("amazon.com/gp")) {
-            amazonVideoPlay();
+        else if (url.includes("amazon.com/dp")) {
+            var playParent = document.getElementsByClassName("playIcon");
+            var pauseParent = document.getElementsByClassName("pausedIcon");
+            var animatedPausedIcon = document.getElementsByClassName("animatedPausedIcon");
+            var playButton = playParent[0];
+            var pauseButton = pauseParent[0];
+            var animatedButton = animatedPausedIcon[0];
+
+            if (playButton != null) {
+                amazonVideoPlay();
+            }
+            else if (pauseButton != null) {
+                amazonVideoPause();
+            }
+            else {
+                animatedButton.click();
+            }
         }
     }
     
@@ -68,5 +83,10 @@ function soundcloudPlay() {
 
 function amazonVideoPlay() {
     var parents = document.getElementsByClassName("playIcon");
+    parents[0].click();
+}
+
+function amazonVideoPause() {
+    var parents = document.getElementsByClassName("pausedIcon");
     parents[0].click();
 }

@@ -1,3 +1,10 @@
+chrome.tabs.onCreated.addListener(function(tab) {
+  chrome.tabs.executeScript(tab.id, {file: "script.js"});
+}); 
+
+// chrome.tabs.onActivated.addListener(function(activeInfo){
+//   chrome.tabs.executeScript(activeInfo.tabId, {file: "script.js"});
+// });
 
 chrome.commands.onCommand.addListener(function(command) {
 	chrome.tabs.query({}, function (tabs) {
@@ -6,7 +13,7 @@ chrome.commands.onCommand.addListener(function(command) {
       var tabId;
 
       if (url.includes("pandora") || url.includes("youtube") || url.includes("netflix") || 
-          url.includes("amazon.com/gp") ||  url.includes("soundcloud") ||  url.includes("spotify")) {
+          url.includes("amazon.com/dp") ||  url.includes("soundcloud") ||  url.includes("spotify")) {
 
           tabId = tabs[i].id;
 
