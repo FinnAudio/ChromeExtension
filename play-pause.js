@@ -7,14 +7,7 @@ chrome.runtime.sendMessage({action: "play"}, function(response)
             youtubePlay();
         }
         else if (url.includes("pandora")) {
-            var parents = document.getElementsByClassName("playButton");
-            var s = parents[0].style.display;
-            if(s == ("none")) {
-                pandoraPause();
-            }
-            else {
-                pandoraPlay();
-            }
+            pandoraPlay();
         }
         else if (url.includes("netflix")) {
             netflixPlay();
@@ -44,7 +37,7 @@ chrome.runtime.sendMessage({action: "play"}, function(response)
             }
         }
     }
-    
+
 });
 
 function youtubePlay() {
@@ -53,13 +46,13 @@ function youtubePlay() {
 }
 
 function pandoraPlay() {
-    var parents = document.getElementsByClassName("playButton");
-    var child = parents[0].getElementsByTagName('a')[0];
-    child.click();
+    var parents = document.getElementsByClassName("PlayButton");
+    parents[0].click();
 }
 
 function pandoraPause() {
-    var parents = document.getElementsByClassName("pauseButton");
+    var parents = document.getElementsByClassName("PlayButton");
+    alert(parents);
     var child = parents[0].getElementsByTagName('a')[0];
     child.click();
 }
